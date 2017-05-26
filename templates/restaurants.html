@@ -1,0 +1,30 @@
+{% include 'header.html' %}
+
+<button type="button"><a href="{{ url_for('addNewRestaurant') }}">Add new restaurant</a></button>
+
+{% for restaurant in restaurants %}
+	<div class="restaurant-wrapper">
+		<div class="restaurant-settings">
+			<h3>{{restaurant.name}}</h3>
+			<button type="button"><a href="{{ url_for('editRestaurant', restaurant_id=restaurant.id) }}">Edit</a></button>	
+			<button type="button"><a href="{{ url_for('deleteRestaurant', restaurant_id=restaurant.id) }}">Delete</a></button>	
+			<button type="button"><a href="{{ url_for('newMenuItem', restaurant_id=restaurant.id) }}">New Item</a></button>
+		</div>
+		
+
+		{% for item in items %}
+
+		<div class="item-box">
+			<p class="item-name">{{item.name}}</p>
+			<p class="item-price">{{item.price}}</p>
+			<p class="item-description">{{item.description}}</p>	
+			<a href="{{ url_for('editMenuItem', restaurant_id=restaurant.id, item_id=item.id) }}">Edit</a>
+			<a href="{{ url_for('deleteMenuItem', restaurant_id=restaurant.id, item_id=item.id) }}">Delete</a>
+		</div>
+
+
+	{% endfor %}
+	</div>
+{% endfor %}
+
+{% include 'footer.html' %}

@@ -1,0 +1,12 @@
+{% include 'header.html' %}
+
+<h3>You are editing "{{restaurant.name}}"</h3>
+
+<form method="POST" action="">
+	<input type="text" name="restaurant-edit-name" placeholder="{{restaurant.name}}">
+	<button type="submit">Edit Restaurant</button>
+</form>
+
+
+
+{% include 'footer.html' %}

@@ -1,0 +1,37 @@
+{% include 'header.html' %}
+
+<h3>Add a new item to the menu in "{{restaurant.name}}"</h3>
+
+<form method="POST" action="">
+	<label for="item-name">Name
+	<input type="text" name="item-name">
+	</label>
+	<label for="item-price">Price
+		<input type="text" name="item-price">
+	</label>
+	<label for="item-description">Description
+		<textarea name="item-description">
+		</textarea> 
+	</label>
+
+	<div id="course">Course
+		<label for="course">Appetizer
+			<input value="appetizer" type="radio" name="course">
+		</label>
+		<label for="course">Entree
+			<input value="entree" type="radio" name="course">
+		</label>
+		<label for="course">Dessert
+			<input value="dessert" type="radio" name="course">
+		</label>
+		<label for="course">Beverage
+			<input value="beverage" type="radio" name="course">
+		</label>
+	</div>
+
+	<button type="submit">Add Item</button>
+</form>
+
+
+
+{% include 'footer.html' %}

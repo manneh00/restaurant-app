@@ -1,0 +1,37 @@
+{% include 'header.html' %}
+
+<h3>Edit item "{{item.name}}" from "{{restaurant.name}}"</h3>
+
+<form method="POST" action="">
+	<label for="item-name">Name
+	<input type="text" name="item-name" placeholder="{{item.name}}">
+	</label>
+	<label for="item-price">Price
+		<input type="text" name="item-price" placeholder="{{item.price}}">
+	</label>
+	<label for="item-description">Description
+		<textarea name="item-description" value="{{item.description}}">
+		</textarea> 
+	</label>
+
+	<div id="course">Course
+		<label for="course-appetizer">Appetizer
+			<input value="appetizer" type="radio" name="course-appetizer" {% if item.course.lower() == 'appetizer' %} checked="checked" {% endif %}>
+		</label>
+		<label for="course-entree">Entree
+			<input value="entree" type="radio" name="course-entree" {% if item.course.lower() == 'entree' %} checked="checked" {% endif %}>
+		</label>
+		<label for="course-dessert">Dessert
+			<input value="dessert" type="radio" name="course-dessert" {% if item.course.lower() == 'dessert' %} checked="checked" {% endif %}>
+		</label>
+		<label for="course-beverage">Beverage
+			<input value="beverage" type="radio" name="course-beverage" {% if item.course.lower() == 'beverage' %} checked="checked" {% endif %}>
+		</label>
+	</div>
+
+	<button type="submit">Edit Item</button>
+</form>
+
+
+
+{% include 'footer.html' %}

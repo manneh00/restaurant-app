@@ -1,0 +1,15 @@
+{% include 'header.html' %}
+
+<h3>{{restaurant.name}}</h3>
+
+{% for item in menu %}
+
+	<div class="item-box">
+		<p class="item-name">{{item.name}}</p>
+		<p class="item-price">{{item.price}}</p>
+		<p class="item-description">{{item.description}}</p>	
+	</div>
+
+{% endfor %}
+
+{% include 'footer.html' %}
